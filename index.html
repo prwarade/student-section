@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Section</title>
+    <style>
+      select, p, input {
+          font: 1em Calibri;
+        }
+body{ background-color:#FFB6C1;
+       }
+p{   color: red; margin:10px 5 px;  font-family: Sitka Small;
+  font-size: 160%; text-align:center;}
+h1{ color:black; font-family: Sylfaen; text-align:center;
+  font-size: 500%;}
+
+    </style>
+</head>
+<body>
+ <h1> Student Section</h1>
+    <p>
+        <input type="button" 
+            style="margin:10px 0;" 
+              onclick="populateSelect()" 
+value="Click to get list"  
+<!--The SELECT element.-->
+    <select id="sel" onchange="show(this)">
+        
+        <option value="">-- Select --</option>
+    </select>
+
+           
+    </p>
+
+    
+
+    <p id="msg"></p>
+
+    
+</body>
+
+<script>
+    function populateSelect() {
+        // THE JSON ARRAY.
+        var student = [
+{
+    "id":"1",
+    "name":"Asmita",
+    
+   
+   }, 
+   {
+    "id":"2",
+    "name":"Bushan",
+    
+   }, 
+   {
+    "id":"3",
+    "name":"Cinthiya",
+   
+   }, 
+   {
+    "id":"4",
+    "name":"Dolly",
+  
+   }, 
+   {
+    "id":"5",
+    "name":"Emran",
+ 
+   }, 
+   {
+    "id":"6",
+    "name":"Falguni",
+  
+   }, 
+   {
+    "id":"7",
+    "name":"Gauri",
+    
+   }, 
+   {
+    "id":"8",
+    "name":"Hursh",
+   
+   }, 
+   {
+    "id":"9",
+    "name":"Ilesh",
+   
+   }, 
+   {
+    "id":"10",
+    "name":"Jon",
+   
+   }, 
+   {
+    "id":"11",
+    "name":"Komal",
+   
+   }, 
+   {
+    "id":"12",
+    "name":"Laxman",
+   
+   }, 
+   {
+    "id":"13",
+    "name":"Manish",
+ 
+   }, 
+   {
+    "id":"14",
+    "name":"Naren",
+   
+   }, 
+   {
+    "id":"15",
+    "name":"Om",
+   
+   }, 
+   {
+    "id":"16",
+    "name":"Payal",
+   
+   }, 
+   {
+    "id":"17",
+    "name":"Quency",
+   
+   }, 
+   {
+    "id":"18",
+    "name":"Rahul",
+  
+   }, 
+   {
+    "id":"19",
+    "name":"Soham",
+   
+   }, 
+   {
+    "id":"20",
+    "name":"Tarun",
+    
+   }, 
+   {
+    "id":"21",
+    "name":"Urmila",
+    
+   }, 
+   {
+    "id":"22",
+    "name":"Vansh",
+  
+   }, 
+   {
+    "id":"23",
+    "name":"William",
+   
+   }, 
+   {
+    "id":"24",
+    "name":"Yami",
+  
+   }, 
+   {
+    "id":"25",
+    "name":"Zara",
+   
+   },
+   
+  
+];
+
+        var ele = document.getElementById('sel');
+        for (var i = 0; i < student.length; i++) {
+            // POPULATE SELECT ELEMENT WITH JSON.
+            ele.innerHTML = ele.innerHTML +
+                '<option value="' + student[i]['id'] + '">' + student[i]['name'] + '</option>';
+        }
+    }
+
+    function show(ele) {
+        
+        var msg = document.getElementById('msg');
+        msg.innerHTML = 'Selected student: <b>' + ele.options[ele.selectedIndex].text + '</b> </br>'  +
+            'id: <b>' + ele.value + '</b>';
+    }
+</script>
+</html>
